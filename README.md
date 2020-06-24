@@ -1,4 +1,5 @@
 # Gauntlet 卡黑
+ <img width="499" height="332" src="https://github.com/mirrorchy/AllForClouds/blob/master/img/title.jpg"/>
 *莫嚣张，有位骑士已刺出长枪*  
 *And a knight with his banners all bravely unfurled*  
 *惩恶扬善游侠四方*  
