@@ -1,5 +1,5 @@
 # Gauntlet 卡黑
- <img width="499" height="332" src="https://github.com/AllForClouds/Gauntlet/blob/master/Gauntlet.jpg"/>
+<div align=center><img width="499" height="332" src="https://github.com/AllForClouds/Gauntlet/blob/master/Gauntlet.jpg"/></div>
  
 *莫嚣张，有位骑士已刺出长枪*  
 *And a knight with his banners all bravely unfurled*  
