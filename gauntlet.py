@@ -5,8 +5,8 @@ import time
 from selenium import  webdriver
 
 weiboUrl='https://passport.weibo.cn/signin/login?entry=mweibo&res=wel&wm=3349&r=https%3A%2F%2Fm.weibo.cn%2F'
-user='18202700807'#这里是微博账号
-password='Cy9805wm'#写入密码
+user=''#这里是微博账号
+password=''#写入密码
 
 #此处改为chromedriver本地位置
 driver = webdriver.Chrome(executable_path="/Users/chy/Desktop/chromedriver")
