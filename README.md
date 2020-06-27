@@ -27,10 +27,10 @@
 1. 配置好需要的环境
 2. 下载好Chrome浏览器对应的webdriver(即chromedriver.exe)
 3. 将“音乐剧云次方净化站”单独放入一个关注收藏分组，记录其序号num（如在默认中“特别关注”分组序号为6）
-4. 在gauntlet.py中改动username和password
-5. 在gauntlet.py中改动chromedriver.exe的本地位置
-6. 在gauntlet.py中注释标出的地方改动序号为num
-7. 在终端输入python3 gauntlet.py运行即可
+4. 在gauntlet.py中改动chromedriver.exe的本地位置
+5. 在gauntlet.py中注释标出的地方改动序号为num
+6. 在终端输入python3 gauntlet.py运行即可
+7. 运行时会提示输入账号、密码
 
 ## 待补充功能
 1. 由于网速以及渣浪bug，有时分组页面没能成功加载（秃头程序员惨痛经历：测试中无数次点进蒸煮wb…差点在评论留下迷惑打卡bug……） 因此暂时关掉自动评论功能，请麻烦手动打卡orz…… 
