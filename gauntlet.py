@@ -1,6 +1,3 @@
-#sina weibo like robot
-#https://m.weibo.cn
-
 import time
 from selenium import  webdriver
 from selenium.webdriver.common.action_chains import ActionChains
@@ -11,8 +8,12 @@ password=input("请输入密码:")
 
 #此处改为chromedriver本地位置
 driver = webdriver.Chrome(executable_path="/Users/chy/Desktop/chromedriver")
+
+#全屏（如需要全屏，将下一行取消注释即可）
+#driver.maximize_window()
+
 driver.get(weiboUrl)
-time.sleep(3)
+time.sleep(5)
 driver.find_element_by_id('loginName').clear()
 driver.find_element_by_id('loginName').send_keys(user)
 driver.find_element_by_id('loginPassword').clear()
@@ -22,36 +23,42 @@ time.sleep(2)
 #解释下下面两句的作用，这个软件用来给我某个分组用户点赞的，第一句是用来点开我已经有的分组，第二个是点击我其中一个分组，这样才能进入分组进行点赞
 driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[1]/div[2]/div/div[1]/div[1]/div/ul/li[1]/span[1]').click()
 time.sleep(2)
-#此行li[6]中6改为num
-driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[1]/div[2]/div/div[1]/div[2]/ul/li[6]/span').click() #特别关注
+
+#输入组号，如默认中特别关注组号为6
+num=int(input("请输入“音乐剧云次方净化站”所在分组组号num：")) 
+driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[1]/div[2]/div/div[1]/div[2]/ul/li['+str(num)+']/span').click() #特别关注
 time.sleep(5)
 
-btn = driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/footer/div[2]')#查找评论按钮(倒数第二个div[1]可换)
+k=int(input("请输入第__条卡黑帖：")) #选择第k条进行卡黑操作
+btn = driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[2]/div[2]/'+'div['+str(k)+']/div/div/footer/div[2]')#查找评论按钮(倒数第二个div[1]可换)
 time.sleep(1)
 btn.click()
 
 time.sleep(2)
 links=driver.find_elements_by_link_text("网页链接")
 length=len(links)
+print("待处理数量：")
 print(length)
-for link in links:
-    driver.execute_script('window.scrollBy(0,500)')#向下滚动
+for i in range(0,length):
+    links=driver.find_elements_by_link_text("网页链接")
+    driver.execute_script('window.scrollBy(0,500)')#向下滚动500
     time.sleep(2)
-    link.click()
+    links[i].click()
     time.sleep(3)
     tab1=driver.find_element_by_link_text("有害信息")
     tab1.click()
     time.sleep(2)
     tab2=driver.find_element_by_link_text("其他有害信息")
     tab2.click()
-    driver.execute_script('window.scrollBy(0,300)')#向下滚动
+    driver.execute_script('window.scrollBy(0,300)')#向下滚动300
     time.sleep(3)
+    #点击选框
     check = driver.find_element_by_class_name('inp_chk')
-    #直接点击选框
     check.click()
     time.sleep(2)
-    #勾选后，判断选框状态
     submit=driver.find_element_by_link_text("提交")
     submit.click()
     driver.back()
+    time.sleep(2)
+print('DONE')
 
