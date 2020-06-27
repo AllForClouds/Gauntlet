@@ -1,5 +1,6 @@
 import time
 from selenium import  webdriver
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 
 weiboUrl='https://passport.weibo.cn/signin/login?entry=mweibo&res=wel&wm=3349&r=https%3A%2F%2Fm.weibo.cn%2F'
@@ -7,7 +8,7 @@ user=input("请输入邮箱/手机号:")
 password=input("请输入密码:")
 
 #此处改为chromedriver本地位置
-driver = webdriver.Chrome(executable_path="/Users/chy/Desktop/chromedriver")
+driver = webdriver.Safari()
 
 #全屏（如需要全屏，将下一行取消注释即可）
 #driver.maximize_window()
@@ -18,9 +19,9 @@ driver.find_element_by_id('loginName').clear()
 driver.find_element_by_id('loginName').send_keys(user)
 driver.find_element_by_id('loginPassword').clear()
 driver.find_element_by_id('loginPassword').send_keys(password)
-driver.find_element_by_id('loginAction').click()#登陆操作至此完成
-time.sleep(2)
-#点开已有分组
+driver.find_element_by_id('loginAction').send_keys(Keys.ENTER)#登陆操作至此完成
+time.sleep(5)
+#解释下下面两句的作用，这个软件用来给我某个分组用户点赞的，第一句是用来点开我已经有的分组，第二个是点击我其中一个分组，这样才能进入分组进行点赞
 driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[1]/div[2]/div/div[1]/div[1]/div/ul/li[1]/span[1]').click()
 time.sleep(2)
 
