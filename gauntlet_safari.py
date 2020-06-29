@@ -61,5 +61,6 @@ for i in range(0,length):
     submit.click()
     driver.back()
     time.sleep(2)
+    print('\r'+str((i*100)/length)+'%', end='')
 print('DONE')
 

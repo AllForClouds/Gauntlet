@@ -22,15 +22,16 @@
     ```
 
 ## 操作步骤
-1. 配置好需要的环境，并将Chrome浏览器设为默认浏览器(在浏览器“设置”中)
-2. 下载好Chrome浏览器对应的webdriver(即chromedriver.exe)（[官方下载链接](https://sites.google.com/a/chromium.org/chromedriver/home) 需要翻墙，注意下载对应版本；百度搜索Chrome webdriver有很多下载指导）
+1. 配置好需要的环境
+2. 下载好Chrome浏览器对应的webdriver(即chromedriver.exe)（[官方下载链接](https://sites.google.com/a/chromium.org/chromedriver/home) 需要翻墙，注意下载对应版本；如翻墙有困难，百度搜索“Chrome webdriver”有很多下载指导）
 3. 将“音乐剧云次方净化站”单独放入一个关注收藏分组，记录其序号num（即点击“关注“旁边的小三角，可以数出所在分组从左至右从上至下的序号，如在默认中“特别关注”分组序号为6）
 4. 在gauntlet.py中改动chromedriver.exe的本地位置
-5. 在终端输入python3 gauntlet.py运行即可
+5. 在终端输入python3 gauntlet.py运行
 6. 运行时依照提示输入账号、密码
-7. 运行时依照提示输入分组组号num
-8. 运行时依照提示输入第k条卡黑帖
-9. 卡黑完成后会输出“DONE”，退出程序
+7. 【如果是邮箱登录，可能需要人工验证，已设置等待时间10s，请手动验证】
+8. 运行时依照提示输入分组组号num
+9. 运行时依照提示输入第k条卡黑帖
+10. 运行过程中会显示待处理数量以及进度条，卡黑完成后会输出“DONE”，退出程序
     
 输入示例：
 ```
@@ -44,6 +45,7 @@ xxxxxxxx（密码）
 ```
 待处理数量：
 4
+100%
 DONE
 ```
 ## 补充说明

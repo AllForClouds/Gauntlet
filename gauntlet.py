@@ -6,7 +6,7 @@ weiboUrl='https://passport.weibo.cn/signin/login?entry=mweibo&res=wel&wm=3349&r=
 user=input("请输入邮箱/手机号:")
 password=input("请输入密码:")
 
-#此处改为chromedriver本地位置
+#此处改为chromedriver的本地位置
 driver = webdriver.Chrome(executable_path="/Users/chy/Desktop/chromedriver")
 
 #全屏（如需要全屏，将下一行取消注释即可）
@@ -20,6 +20,11 @@ driver.find_element_by_id('loginPassword').clear()
 driver.find_element_by_id('loginPassword').send_keys(password)
 driver.find_element_by_id('loginAction').click()#登陆操作至此完成
 time.sleep(2)
+
+#若邮箱登录，需要经过人工验证
+if user.find('@')>=0:
+    time.sleep(10)
+
 #点开已有分组
 driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[1]/div[2]/div/div[1]/div[1]/div/ul/li[1]/span[1]').click()
 time.sleep(2)
@@ -60,5 +65,6 @@ for i in range(0,length):
     submit.click()
     driver.back()
     time.sleep(2)
+    print('\r'+str(int((i*100)/length))+'%', end='')
 print('DONE')
 
