@@ -13,8 +13,8 @@
         <div align=center><img width="630" height="420" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/selenium.png"/></div>  
      - 其他IDE：终端输入pip install selenium
        - Mac:打开Mac系统中自带Terminal(终端)软件，输入pip install selenium
-       - Windows:（不太熟悉windows命令行，如使用不熟练/安装不成功，推荐下载Thonny软件）
-2. 下载好Chrome浏览器对应的webdriver:[官方下载链接](https://sites.google.com/a/chromium.org/chromedriver/home) 需要翻墙，注意下载对应版本；如翻墙/下载有困难，百度搜索“Chrome webdriver”有很多下载指导
+       - Windows:（不太熟悉windows命令行，如使用不熟练或安装不成功，推荐下载Thonny软件）
+2. 下载好Chrome浏览器对应的webdriver:[官方下载链接](https://sites.google.com/a/chromium.org/chromedriver/home) 需要翻墙，注意下载对应版本；如翻墙或下载有困难，百度搜索“Chrome webdriver”有很多下载指导
   - 首先获知Chrome浏览器版本，在地址框中输入
     ```
     chrome://version
@@ -46,7 +46,7 @@
        <div align=center><img width="540" height="540" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/run.png"/></div>   
     - 其他IDE:(其他对应运行方式)  
    4. 运行时依照提示输入微博账号、密码  
-      【如果是邮箱登录，可能需要人工验证，已设置等待时间10s，请手动验证】  
+      \[如果是邮箱登录，可能需要人工验证，已设置等待时间10s，请手动验证\]  
    5. 运行时依照提示输入分组组号num  
    6. 运行时依照提示输入第k条帖（即从上到下第几条是带链接卡黑帖）  
   
