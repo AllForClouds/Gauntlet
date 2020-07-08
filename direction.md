@@ -22,23 +22,23 @@
     然后回车，可以看到chrome浏览器版本  
     如图中83.0.4103.116  
     <div align=center><img width="810" height="180" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/chrome.png"/></div>
-  - 打开官方下载链接，找到对应版本号的链接(如图中下划线部分)，点击，选择mac/win系统对应的安装包下载安装  
+  - 打开官方下载链接，找到对应版本号的链接(如图中下划线部分)，点击，选择mac或win系统对应的安装包下载安装  
    <div align=center><img width="810" height="810" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/webdriver.png"/></div>  
    下载并解压得到chromedriver，记得存chromedriver的位置 
-3. 将“音乐剧云次方净化站”单独放入一个微博关注收藏分组，记录其序号num:电脑端进入[网页](https://passport.weibo.cn/signin/login?entry=mweibo&res=wel&wm=3349&r=https%3A%2F%2Fm.weibo.cn%2F)登陆，点击“关注“旁边的小三角，可以数出所在分组从左至右从上至下的序号，如图中“特别关注”分组序号为6
+3. 将“音乐剧云次方净化站”单独放入一个微博关注收藏分组，记录其序号num:电脑端进入[网页](https://passport.weibo.cn/signin/login?entry=mweibo&res=wel&wm=3349&r=https%3A%2F%2Fm.weibo.cn%2F) 登陆，点击“关注“旁边的小三角，可以数出所在分组从左至右从上至下的序号，如图中“特别关注”分组序号为6
    <div align=center><img width="500" height="200" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/focus.png"/></div> 
-4. 在github现在这个网页的[上一页面](https://github.com/AllForClouds/Gauntlet)中点击绿色的clone，下载本程序，并解压
+4. 在github现在这个网页的[上一页面](https://github.com/AllForClouds/Gauntlet) 中点击绿色的clone，下载本程序，并解压
    <div align=center><img width="810" height="270" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/download.png"/></div> 
 5. 以下为具体运行程序步骤:   
    1. 打开 gauntlet.py  
     - Thonny使用者:  
-      - 上边栏中File->Open, 选择并打开下载解压后的 gauntlet.py  
+      上边栏中File->Open, 选择并打开下载解压后的 gauntlet.py  
        <div align=center><img width="540" height="180" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/open.png"/></div>  
     - 其他IDE:(其他对应打开方式)  
    2. 在gauntlet.py中改动chromedriver的本地位置(见代码中第一个#注释标出部分)  
     - 找到chromdriver的本地位置:  
-      - Mac:打开自带的Terminal(终端)，将chromedriver拖动到显示框里，可以看到 \$ 后显示路径，即为本地位置，复制 \$ 后这一串  
-      - Windows:打开终端（同时按下键盘上win+r，输入cmd回车），将chromedriver拖动到显示框里，可以看到>>后显示路径，即为本地位置，复制>>后这一串  
+      Mac:打开自带的Terminal(终端)，将chromedriver拖动到显示框里，可以看到 \$ 后显示路径，即为本地位置，复制 \$ 后这一串  
+      Windows:打开终端（同时按下键盘上win+r，输入cmd回车），将chromedriver拖动到显示框里，可以看到>>后显示路径，即为本地位置，复制>>后这一串  
     - 找到代码中改动位置，替换掉#注释下一行中引号部分  
       <div align=center><img width="810" height="210" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/code.png"/></div>   
    3. 运行gauntlet.py  
