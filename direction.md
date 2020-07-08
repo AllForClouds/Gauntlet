@@ -8,7 +8,7 @@
    - selenium：
      - Thonny使用者：上边栏tools->manage packages->搜索selenium->点击安装（特别方便巨好用）
        - 点击上边栏tools->manage packages  
-        <img width="630" height="180" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/tool.png">     
+        <img width="630" height="180" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/tool.png">  
        - 输入selenium，点击右侧按钮搜索，搜索后点击下方install按钮，安装结束后关闭  
         <img width="630" height="420" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/selenium.png">  
      - 其他IDE：终端输入pip install selenium
