@@ -19,7 +19,7 @@
 * selenium  
 
 ## 操作步骤
-[详细配图版说明]
+[详细配图版说明](https://github.com/AllForClouds/Gauntlet/blob/master/direction.md)
 1. 配置好需要的环境  
    - Python3:零基础安装推荐搜索thonny，直接安装；该IDE特别特别友好！！！其他什么都不用装:)  
    - Chrome浏览器：直接搜索安装，无特别说明  
