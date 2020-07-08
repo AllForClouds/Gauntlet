@@ -22,7 +22,7 @@
     然后回车，可以看到chrome浏览器版本  
     如图中83.0.4103.116  
     <img width="810" height="180" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/chrome.png"/>
-  - 打开官方下载链接，找到对应版本号的链接(如图中下划线部分)，点击，选择mac/win系统对应的安装包下载安装  
+  - 打开官方下载链接，找到对应版本号的链接(如图中下划线部分)，点击，选择mac或win系统对应的安装包下载安装  
    <img width="810" height="810" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/webdriver.png"/>  
    下载并解压得到chromedriver，记得存chromedriver的位置 
 3. 将“音乐剧云次方净化站”单独放入一个微博关注收藏分组，记录其序号num:电脑端进入[网页](https://passport.weibo.cn/signin/login?entry=mweibo&res=wel&wm=3349&r=https%3A%2F%2Fm.weibo.cn%2F) 登陆，点击“关注“旁边的小三角，可以数出所在分组从左至右从上至下的序号，如图中“特别关注”分组序号为6
