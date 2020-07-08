@@ -25,9 +25,9 @@
   - 打开官方下载链接，找到对应版本号的链接(如图中下划线部分)，点击，选择mac/win系统对应的安装包下载安装  
    <img width="810" height="810" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/webdriver.png"/>  
    下载并解压得到chromedriver，记得存chromedriver的位置 
-3. 将“音乐剧云次方净化站”单独放入一个微博关注收藏分组，记录其序号num:电脑端进入[网页](https://passport.weibo.cn/signin/login?entry=mweibo&res=wel&wm=3349&r=https%3A%2F%2Fm.weibo.cn%2F)登陆，点击“关注“旁边的小三角，可以数出所在分组从左至右从上至下的序号，如图中“特别关注”分组序号为6
+3. 将“音乐剧云次方净化站”单独放入一个微博关注收藏分组，记录其序号num:电脑端进入[网页](https://passport.weibo.cn/signin/login?entry=mweibo&res=wel&wm=3349&r=https%3A%2F%2Fm.weibo.cn%2F) 登陆，点击“关注“旁边的小三角，可以数出所在分组从左至右从上至下的序号，如图中“特别关注”分组序号为6
    <img width="500" height="200" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/focus.png"/> 
-4. 在github现在这个网页的[上一页面](https://github.com/AllForClouds/Gauntlet)中点击绿色的clone，下载本程序，并解压
+4. 在github现在这个网页的[上一页面](https://github.com/AllForClouds/Gauntlet) 中点击绿色的clone，下载本程序，并解压
    <img width="810" height="270" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/download.png"/> 
 5. 以下为具体运行程序步骤:   
    1. 打开 gauntlet.py  
@@ -46,7 +46,7 @@
        <img width="540" height="540" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/run.png"/>   
     - 其他IDE:(其他对应运行方式)  
    4. 运行时依照提示输入微博账号、密码  
-      【如果是邮箱登录，可能需要人工验证，已设置等待时间10s，请手动验证】  
+      \[如果是邮箱登录，可能需要人工验证，已设置等待时间10s，请手动验证\]  
    5. 运行时依照提示输入分组组号num  
    6. 运行时依照提示输入第k条帖（即从上到下第几条是带链接卡黑帖）  
   
