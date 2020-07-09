@@ -46,20 +46,19 @@ time.sleep(1)
 btn = driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[2]/div[2]/'+'div['+str(k)+']/div/div/footer/div[2]')#查找评论按钮(倒数第二个div[1]可换)
 btn.click()
 st=time.time()
-while(time.time()-st<10):
-    ids=driver.find_elements_by_link_text("音乐剧云次方净化站")
-    if len(ids)!=0:
-        break
-else:
+#while(time.time()-st<10):
+test=driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/header/div[2]/div/a')
+verify=test.get_attribute('href')
+l=len(verify)
+if verify[(l-10):l]!="5521179668":
     print("---Identity Error---")
     driver.close()
     sys.exit()
-while(time.time()-st<10):
-    links=driver.find_elements_by_link_text("网页链接")
-    if len(links)!=0:
-        break
+time.sleep(3)
+links=driver.find_elements_by_link_text("网页链接")
 length=len(links)
 print("待处理数量：",length)
+curUrl=driver.current_url
 for i in range(0,length):
     st=time.time()
     while(time.time()-st<10):
@@ -90,11 +89,11 @@ for i in range(0,length):
     driver.execute_script('window.scrollBy(0,200)')
     time.sleep(0.5)
     #点击选框
-    check = driver.find_element_by_class_name('inp_chk')
-    check.click()
+    check = driver.find_elements_by_class_name('inp_chk')
+    check[len(check)-1].click()
     submit=driver.find_element_by_link_text("提交")
     submit.click()
-    driver.back()
+    driver.get(curUrl)
     print('\r'+str(int(((i+1)*100)/length))+'%', end='')
 print('\nDONE')
 
