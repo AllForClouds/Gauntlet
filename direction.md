@@ -1,19 +1,20 @@
 # Gauntlet卡黑程序配图版说明
-1. 配置好需要的环境  
-   - Python3:零基础安装推荐搜索Thonny，直接安装；该IDE特别特别友好！！！其他什么都不用装:)  
+1. 配置好需要的环境(以下4项必须！)
+   - Python3: 零基础安装推荐搜索Thonny，直接安装；该IDE特别特别友好！！！其他什么都不用装:)  
      - [官网链接](https://thonny.org)
      - 点击右上角与电脑系统对应的链接下载安装
       <div align=center><img width="550" height="580" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/thonny.jpg"/></div>  
+   - 运行程序的开发环境(IDE): 依据个人喜好即可，有Thonny则不用安装其他
    - Chrome浏览器：直接搜索安装，无特别说明  
-   - selenium：
-     - Thonny使用者：上边栏tools->manage packages->搜索selenium->点击安装（特别方便巨好用）
-       - 点击上边栏tools->manage packages  
-        <div align=center><img width="630" height="180" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/tool.png"/></div>     
-       - 输入selenium，点击右侧按钮搜索，搜索后点击下方install按钮，安装结束后关闭  
-        <div align=center><img width="630" height="420" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/selenium.png"/></div>  
-     - 其他IDE：终端输入pip install selenium
-       - Mac:打开Mac系统中自带Terminal(终端)软件，输入pip install selenium
-       - Windows:（不太熟悉windows命令行，如使用不熟练或安装不成功，推荐下载Thonny软件）
+   - selenium:  
+      - Thonny使用者：上边栏tools->manage packages->搜索selenium->点击安装（特别方便巨好用）  
+         - 点击上边栏tools->manage packages  
+            <div align=center><img width="630" height="180" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/tool.png"/></div>     
+         - 输入selenium，点击右侧按钮搜索，搜索后点击下方install按钮，安装结束后关闭  
+            <div align=center><img width="630" height="420" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/selenium.png"/></div>  
+      - 其他IDE：终端输入pip install selenium
+         - Mac:打开Mac系统中自带Terminal(终端)软件，输入pip install selenium
+         - Windows:(不太熟悉windows命令行，如使用不熟练或安装不成功，推荐下载Thonny软件)  
 2. 下载好Chrome浏览器对应的webdriver: [官方下载链接](https://sites.google.com/a/chromium.org/chromedriver/home) 需要翻墙，注意下载对应版本；如翻墙或下载有困难，百度搜索“Chrome webdriver”有很多下载指导
   - 首先获知Chrome浏览器版本，在地址框中输入
     ```
