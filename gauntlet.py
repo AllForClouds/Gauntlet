@@ -11,8 +11,8 @@ k=int(input("请输入第__条卡黑帖："))
 if user.find('@')>=0:
     print("请注意网页验证提示") 
 
-#此处改为chromedriver的本地位置
-driver = webdriver.Chrome(executable_path="**********/chromedriver")
+#此处改为chromedriver的本地位置(windows系统注意去掉后面的.exe)
+driver = webdriver.Chrome(executable_path="************")
 
 #全屏（如需要全屏，将下一行取消注释即可）
 #driver.maximize_window()
@@ -47,8 +47,9 @@ btn = driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[2]/div[2]/'+'div['
 btn.click()
 st=time.time()
 #while(time.time()-st<10):
-test=driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[2]/div[2]/div[1]/div/div/div/header/div[2]/div/a')
-verify=test.get_attribute('href')
+time.sleep(2)
+test=driver.find_elements_by_class_name("m-img-box")
+verify=test[0].get_attribute('href')
 l=len(verify)
 if verify[(l-10):l]!="5521179668":
     print("---Identity Error---")
@@ -91,9 +92,10 @@ for i in range(0,length):
     #点击选框
     check = driver.find_elements_by_class_name('inp_chk')
     check[len(check)-1].click()
+    time.sleep(0.2)
     submit=driver.find_element_by_link_text("提交")
     submit.click()
-    time.sleep(0.7)
+    time.sleep(0.5)
     driver.get(curUrl)
     print('\r'+str(int(((i+1)*100)/length))+'%', end='')
 print('\nDONE')
