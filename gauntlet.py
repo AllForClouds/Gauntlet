@@ -33,7 +33,7 @@ else:
     print("【用户输入完毕】")
 
 st=time.time()
-while(time.time()-st<10):
+while(time.time()-st<20):
     focus=driver.find_elements_by_xpath('//*[@id="app"]/div[1]/div[1]/div[2]/div/div[1]/div[1]/div/ul/li[1]/span[1]')
     if len(focus)!=0:
         break
