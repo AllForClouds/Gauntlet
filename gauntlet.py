@@ -12,7 +12,7 @@ if user.find('@')>=0:
     print("请注意网页验证提示") 
 
 #此处改为chromedriver的本地位置
-driver = webdriver.Chrome(executable_path="*********/chromedriver")
+driver = webdriver.Chrome(executable_path="**********/chromedriver")
 
 #全屏（如需要全屏，将下一行取消注释即可）
 #driver.maximize_window()
@@ -93,6 +93,7 @@ for i in range(0,length):
     check[len(check)-1].click()
     submit=driver.find_element_by_link_text("提交")
     submit.click()
+    time.sleep(0.7)
     driver.get(curUrl)
     print('\r'+str(int(((i+1)*100)/length))+'%', end='')
 print('\nDONE')
