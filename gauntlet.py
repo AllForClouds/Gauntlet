@@ -12,7 +12,7 @@ if user.find('@')>=0:
     print("请注意网页验证提示") 
 
 #此处改为chromedriver的本地位置(windows系统注意去掉后面的.exe)
-driver = webdriver.Chrome(executable_path="C:\\Users\\fye\\Downloads\\chromedriver_win32\\chromedriver")
+driver = webdriver.Chrome(executable_path="*********")
 
 #全屏（如需要全屏，将下一行取消注释即可）
 #driver.maximize_window()
