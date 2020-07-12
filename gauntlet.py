@@ -4,6 +4,7 @@ from selenium import  webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 
 weiboUrl='https://passport.weibo.cn/signin/login?entry=mweibo&res=wel&wm=3349&r=https%3A%2F%2Fm.weibo.cn%2F'
+
 user=input("请输入邮箱/手机号:")
 password=input("请输入密码:")
 num=int(input("请输入“音乐剧云次方净化站”所在分组组号num："))
@@ -11,7 +12,7 @@ if user.find('@')>=0:
     print("请注意网页验证提示") 
 
 #此处改为chromedriver的本地位置(windows系统注意去掉后面的.exe)
-driver = webdriver.Chrome(executable_path="****************")
+driver = webdriver.Chrome(executable_path="C:\\Users\\fye\\Downloads\\chromedriver_win32\\chromedriver")
 
 #全屏（如需要全屏，将下一行取消注释即可）
 #driver.maximize_window()
@@ -40,9 +41,11 @@ focus[0].click()
 time.sleep(1)
 driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[1]/div[2]/div/div[1]/div[2]/ul/li['+str(num)+']/span').click() #特别关注
 time.sleep(1)
+driver.find_element_by_xpath('//*[@id="app"]/div/div[2]/div[2]/div[1]/div/div/div[1]/header/div[2]/div/a/h3').click()
+time.sleep(1)
 k=int(input("请输入第__条卡黑帖：")) 
 print("【用户输入完毕】")
-btn = driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[2]/div[2]/'+'div['+str(k)+']/div/div/footer/div[2]')#查找评论按钮(倒数第二个div[1]可换)
+btn = driver.find_element_by_xpath('//*[@id="app"]/div/'+'div['+str(k+1)+']/div/div/footer/div[2]')#查找评论按钮(倒数第二个div[1]可换)
 btn.click()
 st=time.time()
 #while(time.time()-st<10):
@@ -60,28 +63,35 @@ length=len(links)
 print("待处理数量：",length)
 curUrl=driver.current_url
 for i in range(0,length):
+    
     st=time.time()
     while(time.time()-st<20):
         links=driver.find_elements_by_link_text("网页链接")
-        if len(links)!=0:
+        if len(links)==length:
             break
     else:
         print("---Link Error---")
         driver.close()
         sys.exit()
+    #print(len(links))
+    
     target=links[i]
     driver.execute_script("arguments[0].scrollIntoView();", target)
     driver.execute_script('window.scrollBy(0,-100)')
     links[i].click()
     st=time.time()
-    while(time.time()-st<20):
+    while(time.time()-st<10):
         tab1=driver.find_elements_by_link_text("有害信息")
         if len(tab1)!=0:
             break
-    else:
-        print("---Type Error---")
-        driver.close()
-        sys.exit()
+    #else:
+    #    print("---Type Error---")
+    #    driver.close()
+    #    sys.exit()
+    if len(tab1) == 0 :
+        time.sleep(0.5)
+        driver.get(curUrl)
+        continue
     tab1[0].click()
     driver.execute_script('window.scrollBy(0,100)')
     tab2=driver.find_element_by_link_text("其他有害信息")
