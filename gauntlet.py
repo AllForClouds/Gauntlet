@@ -12,7 +12,7 @@ if user.find('@')>=0:
     print("请注意网页验证提示") 
 
 #此处改为chromedriver的本地位置(windows系统注意去掉后面的.exe)
-driver = webdriver.Chrome(executable_path="*********")
+driver = webdriver.Chrome(executable_path="***************")
 
 #全屏（如需要全屏，将下一行取消注释即可）
 #driver.maximize_window()
@@ -31,7 +31,7 @@ if user.find('@')>=0:
     print("【请在网页进行手动验证】")
 
 st=time.time()
-while(time.time()-st<20):
+while(time.time()-st<30):
     focus=driver.find_elements_by_xpath('//*[@id="app"]/div[1]/div[1]/div[2]/div/div[1]/div[1]/div/ul/li[1]/span[1]')
     if len(focus)!=0:
         break
@@ -45,10 +45,10 @@ driver.find_element_by_xpath('//*[@id="app"]/div/div[2]/div[2]/div[1]/div/div/di
 time.sleep(1)
 k=int(input("请输入第__条卡黑帖：")) 
 print("【用户输入完毕】")
-btn = driver.find_element_by_xpath('//*[@id="app"]/div/'+'div['+str(k+1)+']/div/div/footer/div[2]')#查找评论按钮(倒数第二个div[1]可换)
+btn = driver.find_element_by_xpath('//*[@id="app"]/div/'+'div['+str(k+1)+']/div/div/footer/div[2]')#查找评论按钮
 btn.click()
 st=time.time()
-#while(time.time()-st<10):
+
 time.sleep(1)
 test=driver.find_elements_by_class_name("m-img-box")
 verify=test[0].get_attribute('href')
@@ -65,7 +65,7 @@ curUrl=driver.current_url
 for i in range(0,length):
     
     st=time.time()
-    while(time.time()-st<20):
+    while(time.time()-st<30):
         links=driver.find_elements_by_link_text("网页链接")
         if len(links)==length:
             break
@@ -107,18 +107,5 @@ for i in range(0,length):
     time.sleep(0.5)
     driver.get(curUrl)
     print('\r'+str(int(((i+1)*100)/length))+'%', end='')
-if length==99:
-    target=links[98]
-    driver.execute_script("arguments[0].scrollIntoView();", target)
-    while(time.time()-st<20):
-        links=driver.find_elements_by_link_text("网页链接")
-        if len(links)!=0:
-            break
-    else:
-        print("---Link Error---")
-        driver.close()
-        sys.exit()
-    print(len(links))
 
 print('\nDONE')
-
