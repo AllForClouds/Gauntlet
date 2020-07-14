@@ -27,7 +27,7 @@
    - 打开官方下载链接，找到对应版本号的链接(如图中下划线部分)，点击，选择mac或win系统对应的安装包下载安装  
       <div align=center><img width="810" height="810" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/webdriver.png"/></div>  
     下载并解压得到chromedriver，记得存chromedriver的位置  
-3. 将“音乐剧云次方净化站”单独放入一个微博关注收藏分组，记录其序号num:  
+3. 将“音乐剧云次方净化站”和“云云净化小助手1号”单独放入一个微博关注收藏分组，记录其序号num:  
    电脑端进入[网页](https://passport.weibo.cn/signin/login?entry=mweibo&res=wel&wm=3349&r=https%3A%2F%2Fm.weibo.cn%2F) 登陆，点击“关注“旁边的小三角，可以数出所在分组从左至右从上至下的序号，如图中“特别关注”分组序号为6
    <div align=center><img width="500" height="200" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/focus.png"/></div> 
 4. 在github上一页面中点击绿色的clone，下载本程序，并解压
@@ -43,7 +43,7 @@
       Mac:打开自带的Terminal(终端)，将chromedriver拖动到显示框里，可以看到 \$ 后显示路径，即为本地位置，复制 \$ 后这一串  
          <div align=center><img width="600" height="180" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/drag.png"/></div>
       Windows:打开终端（同时按下键盘上win+r，输入cmd回车），将chromedriver拖动到显示框里，可以看到>>后显示路径，即为本地位置，复制>>后这一串(拖动操作同上)  
-      - 找到代码中改动位置，替换掉#注释下一行中引号部分  
+      - 找到代码中改动位置，替换掉#注释下一行中引号内*********部分  
          <div align=center><img width="810" height="210" src="https://github.com/AllForClouds/Gauntlet/blob/master/dir/code.png"/></div>   
    3. 运行gauntlet.py  
       - Thonny使用者:点击上方绿底白色小三角  
@@ -52,6 +52,6 @@
    4. 运行时依照提示输入微博账号、密码  
       【如果是邮箱登录，可能需要人工验证，已设置等待时间10s，请尽快手动验证】
    5. 运行时依照提示输入分组组号num  
-   6. 运行时依照提示输入第k条帖（即从上到下第几条是带链接卡黑帖）    
+   6. 运行时依照提示输入第k条帖（即在浏览器页面停止，且程序提示输入时，数一下从上到下第几条是带链接卡黑帖）    
    【重要！！！运行时切勿拖动滚动条或者点击浏览器页面，让浏览器自动运行即可！】
   

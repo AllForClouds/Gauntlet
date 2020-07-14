@@ -38,11 +38,10 @@ while(time.time()-st<30):
 else:
     print("---Website Error--")
 focus[0].click()
-time.sleep(1)
+time.sleep(2)
 driver.find_element_by_xpath('//*[@id="app"]/div[1]/div[1]/div[2]/div/div[1]/div[2]/ul/li['+str(num)+']/span').click() #特别关注
-time.sleep(1)
+time.sleep(2)
 driver.find_element_by_xpath('//*[@id="app"]/div/div[2]/div[2]/div[1]/div/div/div[1]/header/div[2]/div/a/h3').click()
-time.sleep(1)
 k=int(input("请输入第__条卡黑帖：")) 
 print("【用户输入完毕】")
 btn = driver.find_element_by_xpath('//*[@id="app"]/div/'+'div['+str(k+1)+']/div/div/footer/div[2]')#查找评论按钮
@@ -53,7 +52,7 @@ time.sleep(1)
 test=driver.find_elements_by_class_name("m-img-box")
 verify=test[0].get_attribute('href')
 l=len(verify)
-if verify[(l-10):l]!="5521179668":
+if verify[(l-10):l]!="5521179668" and verify[(l-10):l]!="7413113212":
     print("---Identity Error---")
     driver.close()
     sys.exit()
@@ -84,10 +83,7 @@ for i in range(0,length):
         tab1=driver.find_elements_by_link_text("有害信息")
         if len(tab1)!=0:
             break
-    #else:
-    #    print("---Type Error---")
-    #    driver.close()
-    #    sys.exit()
+
     if len(tab1) == 0 :
         time.sleep(0.5)
         driver.get(curUrl)
