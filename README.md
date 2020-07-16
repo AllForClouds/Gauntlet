@@ -30,10 +30,10 @@
 
     #### Mac
    + 打开Mac自带终端(terminal)，输入"cd "（注意有空格），然后将Gauntlet_1.1_mac文件夹图标按住，拖入到终端显示框中，如图，"cd "后面出现文件夹地址，回车
-    <div align=center><img width="600" height="760" src="https://github.com/AllForClouds/Gauntlet/blob/master/img/folder.png"/></div>
+    <div align=center><img width="770" height="440" src="https://github.com/AllForClouds/Gauntlet/blob/master/img/folder.png"/></div>
   
    + 打开Gauntlet_1.1_mac文件夹，按住Gauntlet_1.1_mac.exe图标，拖入到终端显示框中，如图，出现exe文件地址，回车，出现输入提示
-    <div align=center><img width="600" height="760" src="https://github.com/AllForClouds/Gauntlet/blob/master/img/exe.png"/></div>
+    <div align=center><img width="770" height="440" src="https://github.com/AllForClouds/Gauntlet/blob/master/img/exe.png"/></div>
   
 3. 输入示例
 
