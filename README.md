@@ -29,7 +29,7 @@
    + 直接点击Gauntlet_1-1_win.exe打开，出现输入提示
 
     #### Mac
-   + 打开Gauntlet_1-1_Mac文件夹，打开MacOS文件夹，直接点击Gauntlet_1-1_mac.exe打开，出现输入提示
+   + 打开Gauntlet_1-1_Mac文件夹，点击图标右键->显示包内容，打开MacOS文件夹，直接点击Gauntlet_1-1_mac.exe打开，出现输入提示
 3. 输入示例
 
 + 第一次使用时根据指令创建账号文件(其中账号密码信息为用户的微博账号密码，账号命名可随意)；在使用过程中确保txt文件、chromediver和exe文件位于同一文件夹下
