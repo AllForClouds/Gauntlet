@@ -20,21 +20,16 @@
 
 ## 操作步骤
 1. 下载文件  
-   点击绿色clone图标，下载文件，其中Mac系统保留Gauntlet_1.1_mac文件夹，Windows系统保留Gauntlet_1.1_win文件夹即可
+   点击绿色clone图标，下载文件，其中Mac系统保留Gauntlet_1-1_Mac文件夹，Windows系统保留Gauntlet_1.1_Win文件夹即可，其他请勿删除
 2. 预先设置
     #### Windows
    + 检查系统locale是否中文: 控制面板(Control Panel)-> 区域(Region)-> 管理(administrative)->非Unicode程序中所使用的当前语言(Current language for non-Unicode programs)为中文（简体，中国）  
   如果为其他语言区域请先改为中文  
         <div align=center><img width="600" height="760" src="https://github.com/AllForClouds/Gauntlet/blob/master/img/0-system.jpg"/></div>
-   + 直接点击Gauntlet_1.1.exe打开，出现输入提示
+   + 直接点击Gauntlet_1-1_win.exe打开，出现输入提示
 
     #### Mac
-   + 打开Mac自带终端(terminal)，输入"cd "（注意有空格），然后将Gauntlet_1.1_mac文件夹图标按住，拖入到终端显示框中，如图，"cd "后面出现文件夹地址，回车
-        <div align=center><img width="770" height="400" src="https://github.com/AllForClouds/Gauntlet/blob/master/img/folder.png"/></div>
-  
-   + 打开Gauntlet_1.1_mac文件夹，按住Gauntlet_1.1_mac.exe图标，拖入到终端显示框中，如图，出现exe文件地址，回车，出现输入提示
-        <div align=center><img width="770" height="440" src="https://github.com/AllForClouds/Gauntlet/blob/master/img/exe.png"/></div>
-  
+   + 打开Gauntlet_1-1_Mac文件夹，打开MacOS文件夹，直接点击Gauntlet_1-1_mac.exe打开，出现输入提示
 3. 输入示例
 
 + 第一次使用时根据指令创建账号文件(其中账号密码信息为用户的微博账号密码，账号命名可随意)；在使用过程中确保txt文件、chromediver和exe文件位于同一文件夹下
