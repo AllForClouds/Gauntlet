@@ -21,7 +21,9 @@
 ## 操作步骤
 1. 下载文件  
 * 点击绿色clone图标，下载文件，其中Mac系统保留Gauntlet_1-1_Mac文件夹，Windows系统保留Gauntlet_1.1_Win文件夹即可，文件夹内其他内容请勿删除  
-* 在使用过程中请勿移动任何文件位置  
+* 在使用过程中请勿移动任何文件位置
+* 如果下载速度过慢可以使用下面的百度网盘链接下载
+  [链接](https://pan.baidu.com/s/1zPBfq7q8pUYUJ_kBL2EIdw) 提取码：`ygkk`  
 2. 预先设置
     #### Windows
    + 检查系统locale是否中文: 控制面板(Control Panel)-> 区域(Region)-> 管理(administrative)->非Unicode程序中所使用的当前语言(Current language for non-Unicode programs)为中文（简体，中国）  
