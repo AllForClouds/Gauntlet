@@ -406,6 +406,6 @@ def _setup_ctypes():
 _setup_ctypes()
 
 
-DEFAULT_SCRIPT='Gauntlet_1-1_mac.py'
+DEFAULT_SCRIPT='Gauntlet_1-2_mac.py'
 SCRIPT_MAP={}
 _run()

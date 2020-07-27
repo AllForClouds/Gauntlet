@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>Gauntlet_1-1_mac</string>
+	<string>Gauntlet_1-2_mac</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -20,15 +20,15 @@
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
-	<string>Gauntlet_1-1_mac</string>
+	<string>Gauntlet_1-2_mac</string>
 	<key>CFBundleIconFile</key>
 	<string>icon.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.pythonmac.unspecified.Gauntlet_1-1_mac</string>
+	<string>org.pythonmac.unspecified.Gauntlet_1-2_mac</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Gauntlet_1-1_mac</string>
+	<string>Gauntlet_1-2_mac</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

@@ -1,6 +1,5 @@
- #!/usr/bin/python
- # -*- coding: utf-8 -*-
-
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 import glob
 import time
 import os
@@ -17,6 +16,8 @@ from selenium.common.exceptions import NoSuchElementException
 driver_path = "./chromedriver"
 
 # 创建存有账号信息的text文件
+
+
 def create_account():
     account_user = str(input("请输入邮箱/手机号: "))
     account_password = str(input("请输入密码: "))
@@ -30,6 +31,8 @@ def create_account():
     return
 
     # 添加账号信息或退出
+
+
 def create_or_pass():
     choise = input("是否需要创建新的账号信息？ 需要请输入【Y】，不需要请输入【N】")
     while choise != 'Y' and choise != 'N':
@@ -40,6 +43,8 @@ def create_or_pass():
     return
 
 # Read cookie from local file
+
+
 def get_cookie_cache(cookieFile):
     cookie_dict = {}
     if os.path.exists(cookieFile):
@@ -53,6 +58,8 @@ def get_cookie_cache(cookieFile):
     return cookie_dict
 
 # Get cookie from server
+
+
 def login(user, password, account):
     global driver_path
     driver = webdriver.Chrome(executable_path=driver_path)
@@ -88,6 +95,7 @@ def login(user, password, account):
         f.write(json.dumps(cookies))
         f.close()
     return driver
+
 
 def get_profile(driver, profile):
     while True:
@@ -154,6 +162,7 @@ def go_to_target(cookieFile, user, password, account):
             driver = log
     return driver
 
+
 def file_search():
     file_list = glob.glob('*.txt')
     files = []
@@ -166,7 +175,8 @@ def file_search():
 
 files = file_search()
 # select account
-account = input(f"请【输入】登入账号,您现在有以下账号：【{files}】 \n添加新账号请输入【添加账号】(新用户请先【添加账号】):  ")
+account = input(
+    f"请【输入】登入账号,您现在有以下账号：【{files}】 \n添加新账号请输入【添加账号】(新用户请先【添加账号】):  ")
 
 while True:
     if account == "添加账号":
@@ -243,105 +253,168 @@ except NoSuchElementException:
     target_url = 'https://m.weibo.cn/profile/'+profile_path
     driver.get(target_url)
 
-k = int(input("请输入第__条卡黑帖："))
-print("【用户输入完毕】")
-btn = driver.find_element_by_xpath(
-    '//*[@id="app"]/div/'+'div['+str(k+1)+']/div/div/footer/div[2]')  # 查找评论按钮
-btn.click()
-st = time.time()
 
-time.sleep(1)
-test = driver.find_elements_by_class_name("m-img-box")
-verify = test[0].get_attribute('href')
-verify
-l = len(verify)
-
-if verify[(l-10):l] != profile_path:  # 5521179668
-    print("---Identity Error---")
-    driver.close()
-    sys.exit()
-driver.implicitly_wait(3)
-links = driver.find_elements_by_link_text("网页链接")
-length = len(links)
-
-print("待处理数量：", length)
-curUrl = driver.current_url
-driver.delete_all_cookies()
-
-
-for i in range(0, length):
+def main_operation():
+    driver.get(target_url)
+    k = int(input("请输入第__条卡黑帖："))
+    print("---卡黑信息输入完毕---")
+    btn = driver.find_element_by_xpath('//*[@id="app"]/div/'+'div['+str(k+1)+']/div/div/footer/div[2]')  # 查找评论按钮
+    btn.click()
     st = time.time()
-    while(time.time()-st < 30):
-        links = driver.find_elements_by_link_text("网页链接")
-        if len(links) == length:
-            break
-    else:
-        print("---Link Error---")
+
+    time.sleep(1)
+    test = driver.find_elements_by_class_name("m-img-box")
+    verify = test[0].get_attribute('href')
+    verify
+    l = len(verify)
+
+    if verify[(l-10):l] != profile_path:  # 5521179668
+        print("---Identity Error---")
         driver.close()
         sys.exit()
-    target = links[i]
-    driver.execute_script("arguments[0].scrollIntoView();", target)
-    driver.execute_script('window.scrollBy(0,-100)')
-    links[i].click()
-    driver.implicitly_wait(5)
-
-    # 处理跳转登录界面
-    if str(driver.current_url).find("weibo.com/login") > 0:
-        # 邮箱登录大概率验证，直接扫码
-        if user.find("@") > 0:
-            print("请注意页面操作")
-            driver.find_element_by_xpath(
-                '//*[@id="pl_login_form"]/div/div[1]/div/a[2]').click()
-        # 手机登录先输入信息
-        else:
-            driver.find_element_by_id('loginname').clear()
-            driver.find_element_by_id('loginname').send_keys(user)
-            driver.find_element_by_xpath(
-                '//*[@id="pl_login_form"]/div/div[3]/div[2]/div/input').clear()
-            driver.find_element_by_xpath(
-                '//*[@id="pl_login_form"]/div/div[3]/div[2]/div/input').send_keys(password)
-            driver.find_element_by_xpath(
-                '//*[@id="pl_login_form"]/div/div[3]/div[6]/a').click()
-            time.sleep(10)
-            # 等待时间过长大概率需要验证，直接扫码
-            if str(driver.current_url).find("weibo.com/login") > 0:
-                driver.find_element_by_xpath(
-                    '//*[@id="pl_login_form"]/div/div[1]/div/a[2]').click()
-                while str(driver.current_url).find("weibo.com/login") > 0:
-                    time.sleep(3)
-    st = time.time()
-    while(time.time()-st < 60):
-        tab1 = driver.find_elements_by_link_text("有害信息")
-        if len(tab1) != 0:
-            break
-#         else:
-#            print("---Type Error---")
-#            driver.close()
-#            sys.exit()
-    if len(tab1) == 0:
-        time.sleep(0.5)
-        driver.get(curUrl)
-        continue
-    tab1[0].click()
-    driver.execute_script('window.scrollBy(0,100)')
-    tab2 = driver.find_element_by_link_text("其他有害信息")
-    tab2.click()
-    driver.execute_script('window.scrollBy(0,200)')
-    time.sleep(0.5)
-
-    # 点击选框
-    check = driver.find_elements_by_class_name('inp_chk')
-    check[len(check)-1].click()
-    time.sleep(0.2)
-    submit = driver.find_element_by_link_text("提交")
-    submit.click()
-    time.sleep(0.5)
-    driver.get(curUrl)
-
-    print('\r'+str(int(((i+1)*100)/length))+'%', end='')
     driver.implicitly_wait(3)
 
+    # 以下为卡黑操作
+    links = driver.find_elements_by_link_text("网页链接")
+    length = len(links)
 
+    print("待处理数量：", length)
+    curUrl = driver.current_url
+    driver.delete_all_cookies()
+
+
+    for i in range(0, length):
+        st = time.time()
+        while(time.time()-st < 30):
+            links = driver.find_elements_by_link_text("网页链接")
+            if len(links) == length:
+                break
+        else:
+            print("---Link Error---")
+            driver.close()
+            sys.exit()
+        target = links[i]
+        driver.execute_script("arguments[0].scrollIntoView();", target)
+        driver.execute_script('window.scrollBy(0,-100)')
+        links[i].click()
+        driver.implicitly_wait(5)
+
+        # 处理跳转登录界面
+        if str(driver.current_url).find("weibo.com/login") > 0:
+            # 邮箱登录大概率验证，直接扫码
+            if user.find("@") > 0:
+                print("请注意页面操作")
+                driver.find_element_by_xpath(
+                    '//*[@id="pl_login_form"]/div/div[1]/div/a[2]').click()
+            # 手机登录先输入信息
+            else:
+                driver.find_element_by_id('loginname').clear()
+                driver.find_element_by_id('loginname').send_keys(user)
+                driver.find_element_by_xpath(
+                    '//*[@id="pl_login_form"]/div/div[3]/div[2]/div/input').clear()
+                driver.find_element_by_xpath(
+                    '//*[@id="pl_login_form"]/div/div[3]/div[2]/div/input').send_keys(password)
+                driver.find_element_by_xpath(
+                    '//*[@id="pl_login_form"]/div/div[3]/div[6]/a').click()
+                time.sleep(5)
+                # 等待时间过长大概率需要验证，直接扫码
+                if str(driver.current_url).find("weibo.com/login") > 0:
+                    print("【请使用手机扫码登录】")
+                    driver.find_element_by_xpath(
+                        '//*[@id="pl_login_form"]/div/div[1]/div/a[2]').click()
+                    while str(driver.current_url).find("weibo.com/login") > 0:
+                        time.sleep(3)
+        st = time.time()
+        while(time.time()-st < 60):
+            tab1 = driver.find_elements_by_link_text("有害信息")
+            if len(tab1) != 0:
+                break
+        if len(tab1) == 0:
+            time.sleep(0.5)
+            driver.get(curUrl)
+            continue
+        tab1[0].click()
+        driver.execute_script('window.scrollBy(0,100)')
+        tab2 = driver.find_element_by_link_text("其他有害信息")
+        tab2.click()
+        driver.execute_script('window.scrollBy(0,200)')
+        time.sleep(0.5)
+
+        # 点击选框
+        check = driver.find_elements_by_class_name('inp_chk')
+        check[len(check)-1].click()
+        time.sleep(0.2)
+        submit = driver.find_element_by_link_text("提交")
+        submit.click()
+        time.sleep(0.5)
+        driver.get(curUrl)
+
+        print('\r'+str(int(((i+1)*100)/length))+'%', end='')
+        driver.implicitly_wait(3)
+    print("\n---卡黑完毕---")
+
+    content = input("请输入楼中楼打卡内容：")
+    driver.get(curUrl)
+    driver.implicitly_wait(3)
+    comments = driver.find_elements_by_class_name("card-main")
+    commentNum = len(comments)
+    #print("comment num =",commentNum)
+    count = 0
+    curUrl = driver.current_url
+    for i in range(0, commentNum):
+        st = time.time()
+        while(time.time()-st < 60):
+            comments = driver.find_elements_by_class_name("card-main")
+            if len(comments) >= commentNum:
+                break
+            else:
+                print("---Type Error---")
+                driver.close()
+                sys.exit()
+
+        commentLink = len(comments[i].find_elements_by_link_text("网页链接"))
+        if commentLink > 0:
+            count = count+1
+            # print(i,commentLink)
+            commentTab = comments[i].find_element_by_class_name(
+                "lite-iconf-comments")
+            driver.execute_script("arguments[0].scrollIntoView();", commentTab)
+            driver.execute_script('window.scrollBy(0,-100)')
+            time.sleep(0.5)
+            commentTab.click()
+            time.sleep(0.5)
+            driver.find_element_by_xpath(
+                '//*[@id="app"]/div[1]/div/main/div[1]/div/span/textarea[1]').clear()
+            driver.find_element_by_xpath(
+                '//*[@id="app"]/div[1]/div/main/div[1]/div/span/textarea[1]').send_keys(content)
+            time.sleep(2)
+            driver.find_element_by_class_name("m-send-btn").click()
+            # time.sleep(0.5)
+            driver.implicitly_wait(5)
+
+            driver.get(curUrl)
+            driver.implicitly_wait(3)
+        else:
+            break
+    print("---楼中楼打卡完毕---")
+    print("【请手动进行楼外up操作】")
+    time.sleep(20)
+    print("---第",k,"条卡黑帖处理完毕---")
+    time.sleep(2)
+
+mark=0
+running='Y'
+while True:
+    if mark!=0:
+        running=input("是否继续处理其他卡黑帖？\n是，请输入【Y】；否，请输入【N】")
+    if running=='Y':
+        main_operation()
+        mark+=1
+    else:
+        break
+    
 print('\nDONE')
-
+time.sleep(2)
+print("浏览器即将关闭")
+time.sleep(2)
 driver.close()
