@@ -20,11 +20,11 @@
 >4. 可不退出重新选择其他卡黑帖继续
 
 ## 环境配置
-+ Chrome浏览器(83版本)
++ Chrome浏览器（请再设置（setting）—— 关于chrome (About Chrome) 中检查当前浏览器版本，至少为83版本）
 
 ## 操作步骤
 1. 下载文件  
-* 点击绿色clone图标，下载文件，其中Mac系统保留Gauntlet_1-2_Mac文件夹，Windows系统保留Gauntlet_1.2_Win文件夹即可，文件夹内其他内容请勿删除  
+* 点击绿色clone图标，下载文件，其中Mac系统保留Gauntlet_1-2_Mac文件夹，Windows系统保留Gauntlet_1.2_Win文件夹，根据浏览器版本将对应的chrome driver解压后移至上述Gauntlet文件夹下即可，文件夹内其他内容请勿删除 
 * 在使用过程中请勿移动任何文件位置
 * 如果下载速度过慢可以使用下面的百度网盘链接下载
   [链接](https://pan.baidu.com/s/1hfEtlK8FfGXQCTNxvNlYCw) 提取码：`tke1`  
